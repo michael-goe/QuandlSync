@@ -49,7 +49,7 @@ between runs in terms of the datasets returned. Sometimes it contains duplicates
 This leads to the phenomenon that you may need to execute _QuandlSync_ multiple times until no further
 "Downloading dataset" messages are printed. 
 The problem is more prevalent for larger collections than for smallers. Some collections are completely
-downloaded on the first run, others (e.g. BUNDESBANK, ~28k datasets) required up to 10 runs. A potential
+downloaded on the first run, others (e.g. BUNDESBANK, ~36k datasets) required up to 10 runs. A potential
 workaround may be to download the metadata multiple times, tidy and merge it (TODO).
 
 Until then, you can check for completeness of your copy by comparing the number of files with the
