@@ -39,13 +39,14 @@ Update _settings.json_ with the API key of your Quandl account and set the colle
 to contain the datasets you want to download. 
 
 Example:
-{
-    "api\_key": "YOUR\_API_KEY",
-    "collections": [
-        "BOE",
-        "STOCKNOD",
-        "CBOE"    ]
-}
+
+    {
+        "api\_key": "YOUR\_API_KEY",
+        "collections": [
+            "BOE",
+            "STOCKNOD",
+            "CBOE"    ]
+    }
 
 Will download the collections "BOE", "STOCKNOD" and "CBOE". 
 
