@@ -1,0 +1,7 @@
+{
+    "api_key": "YOUR_API_KEY",
+    "collections": [
+        "BOE",
+        "STOCKNOD",
+        "CBOE"    ]
+}
