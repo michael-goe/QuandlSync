@@ -10,7 +10,7 @@ import os
 import os.path
 
 # Constants
-metadata_pattern = "https://www.quandl.com/api/v2/datasets.csv?query=*&source_code={0}&per_page=300&page={1}&auth_token={2}"
+metadata_pattern = "https://www.quandl.com/api/v2/datasets.csv?query=*&source_code={0}&per_page=300&page={1}&sort_by=id&auth_token={2}"
 
 # Settings
 collections = []
@@ -68,7 +68,7 @@ def download_datasets(collection):
     print("Downloading datasets for {0}".format(collection))
     collection_path = os.path.join("collections/{}".format(collection))
     collection_metadata = pandas.read_csv(os.path.join(collection_path, "metadata.csv"))
-    executor = concurrent.futures.ThreadPoolExecutor(max_workers=3)
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=5)
     # TODO: DUPLICATES
     # Iterate over datasets in collection
     for idx, row in collection_metadata.iterrows():

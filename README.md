@@ -55,20 +55,7 @@ Simply execute QuandlSync with:
 
 __python3 QuandlSync.py__
 
-## Metadata download limitation
-__Important__: Currently, the metadata Quandl returns for a dataset does not appear to be consistent
-between runs in terms of the datasets returned. Sometimes it contains duplicates and lacks datasets.
-This leads to the phenomenon that you may need to execute _QuandlSync_ multiple times until no further
-"Downloading dataset" messages are printed. 
-The problem is more prevalent for larger collections than for smallers. Some collections are completely
-downloaded on the first run, others (e.g. BUNDESBANK, ~36k datasets) required up to 10 runs. A potential
-workaround may be to download the metadata multiple times, tidy and merge it (TODO).
-
-Until then, you can check for completeness of your copy by comparing the number of files with the
-count given on Quandl's site.  
-
 ## TODO
-- Fix Metadata problem
 
 - Handle API call exceeding. Add queue system to account for usage cases in which a processing of the 
 whole collection list is not possible in a single day due to the API call limit.
