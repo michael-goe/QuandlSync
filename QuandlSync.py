@@ -51,7 +51,7 @@ def quandl_download(ds_code, ds_path):
     Executes Quandl API call for downloading whole dataset and saves it to given path.
     """
     print("Downloading dataset: {0}".format(ds_code))
-    ds_data = Quandl.get(ds_code)
+    ds_data = Quandl.get(ds_code, authtoken=auth_token)
     ds_data.to_csv(ds_path)
     
 def quandl_update(ds_code, ds_path, trim_start):
@@ -85,7 +85,7 @@ def download_datasets(collection):
             last_change = pandas.Timestamp(row[3])
             #print("Last update {0}: {1}, last change: {2}".format(ds_name, last_update, last_change))
             if last_change > last_update:
-                ds_diff = Quandl.get(ds_code, trim_start=last_update+pandas.DateOffset(days=1))
+                ds_diff = Quandl.get(ds_code, trim_start=last_update+pandas.DateOffset(days=1), authtoken=auth_token)
                 if not ds_diff.empty:
                     print("Updating dataset: {0}".format(ds_code))
                     ds_file = open(ds_path, "a")
